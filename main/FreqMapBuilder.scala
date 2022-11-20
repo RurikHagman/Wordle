@@ -1,4 +1,4 @@
-package nlp
+package wdl
 
 class FreqMapBuilder:
   private val register = scala.collection.mutable.Map.empty[String, Int]

@@ -1,4 +1,4 @@
-package nlp
+package wdl
 
 case class Text(source: String):
   lazy val words: Vector[String] = {
