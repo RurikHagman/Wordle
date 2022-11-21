@@ -14,6 +14,7 @@ package wdl
     def main(args: Array[String]): Unit =
       
       println(word)
+      drawLetterBlock((5, 5), 'R', java.awt.Color(200,200,200))
     
       
       
