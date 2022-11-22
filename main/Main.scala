@@ -13,8 +13,6 @@ package wdl
 
     def main(args: Array[String]): Unit =
 
-      drawGame()    
-      drawKeys()
       game.play()
       
       

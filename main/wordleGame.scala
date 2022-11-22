@@ -15,6 +15,10 @@ class wordleGame(word: String):
     def gameWon(): Unit = 
         gameOver = true
         println("GAME OVER")
+
+    def outofGuess = 
+        gameOver = true
+        println("GAME OVER THE WORD WAS: " + word) 
     
     def updateKeyboard(key: Char, ecolor: java.awt.Color): Unit =
         if row1.contains(key)      then drawLetterBlock((12, row1.indexOf(key)), key, ecolor, 21)
@@ -58,20 +62,29 @@ class wordleGame(word: String):
                             updateKeyboard(c, State.WrongPlace)
                             
                     else 
-                        drawLetterBlock((charPos(0) + 1, wordGuess.indexOf(c) + 1), c, State.NotExist, 0)
+                        drawLetterBlock((charPos(0) + 1, index + 1), c, State.NotExist, 0)
                         index += 1
                         updateKeyboard(c, State.NotExist)
                 ) 
                 if wordGuess.toVector == wordSeq.toVector then gameWon() else
                 charPos  = (charPos(0) + 1 , 0)
                 guesses -= 1
-                
+    
+    def reset(): Unit = 
+        drawGame()    
+        drawKeys()
+        charPos = (0, 0)
+        gameOver = false
+        guesses = 6
 
     def play(): Unit =
         import introprog.PixelWindow
+
+        
+
         while !gameOver do
 
-            if guesses == 0 then gameOver = true else
+            if guesses == 0 then outofGuess else
                 window.awaitEvent(10)
                 window.lastEventType match
                     case PixelWindow.Event.Undefined => ()
