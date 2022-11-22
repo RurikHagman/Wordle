@@ -203,7 +203,6 @@ harry
 heart
 heavy
 hence
-henry
 horse
 hotel
 house
@@ -215,7 +214,6 @@ inner
 input
 issue
 japan
-jimmy
 joint
 jones
 judge
@@ -232,7 +230,6 @@ least
 leave
 legal
 level
-lewis
 light
 limit
 links
@@ -290,7 +287,6 @@ panel
 paper
 party
 peace
-peter
 phase
 phone
 photo
