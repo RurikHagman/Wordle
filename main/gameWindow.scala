@@ -1,5 +1,4 @@
 package wdl
-import introprog.BlockGame.*
 
 object State extends Enumeration:
     val Idle = java.awt.Color(200,200,200)
