@@ -5,6 +5,8 @@ package wdl
 
     var urlText = Text.fromURL(defaultUrl)
 
+    val dictionary = Text.fromFile(introprog.IO.currentDir() + """\""" + "dictionary.txt")
+
     var text: Text = Text.fromFile(introprog.IO.currentDir() + """\""" + "words.txt")
 
     val word: String = text.randomElem((text.wordsOfLength(5)).toVector)

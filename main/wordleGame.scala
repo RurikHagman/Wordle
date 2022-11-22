@@ -1,4 +1,5 @@
 package wdl
+import scala.collection.mutable.StringBuilder
 
 class wordleGame(word: String):
    
@@ -18,7 +19,7 @@ class wordleGame(word: String):
 
     def outofGuess = 
         gameOver = true
-        println("GAME OVER THE WORD WAS: " + word) 
+        println("GAME OVER! The word was: " + word) 
     
     def updateKeyboard(key: Char, ecolor: java.awt.Color): Unit =
         if row1.contains(key)      then drawLetterBlock((12, row1.indexOf(key)), key, ecolor, 21)
@@ -43,32 +44,40 @@ class wordleGame(word: String):
                 drawLetterBlock((charPos(0) + 1 , charPos(1) + 1) , ' ', State.Idle, 0)
         
         else if key == "Enter" then 
-            if !wordMatrix(charPos(0)).contains(' ') then 
+            if !wordMatrix(charPos(0)).contains(' ') then
+                
                 val wordGuess: Array[Char] = wordMatrix(charPos(0))
-                var index = 0
-               
-                wordGuess.foreach(c => 
-                    if wordSeq.contains(c) then 
-                        
-                        if wordSeq(index) == wordGuess(index) then 
+                val wordStringBuilder = StringBuilder()
+                wordGuess.foreach(c => wordStringBuilder += c.toLower)
+                val wordString: String = wordStringBuilder.toString
+                
+                if Main.dictionary.source.contains(wordString) then 
+                    var index = 0
+
+                    wordGuess.foreach(c => 
+                        if wordSeq.contains(c) then 
                             
-                            drawLetterBlock((charPos(0) + 1, index + 1) , c, State.RightPlace, 0)
-                            index += 1 
-                            updateKeyboard(c, State.RightPlace)
-                            
+                            if wordSeq(index) == wordGuess(index) then 
+                                
+                                drawLetterBlock((charPos(0) + 1, index + 1) , c, State.RightPlace, 0)
+                                index += 1 
+                                updateKeyboard(c, State.RightPlace)
+                                
+                            else 
+                                drawLetterBlock((charPos(0) + 1, index + 1), c, State.WrongPlace, 0)
+                                index += 1
+                                updateKeyboard(c, State.WrongPlace)
+                                
                         else 
-                            drawLetterBlock((charPos(0) + 1, index + 1), c, State.WrongPlace, 0)
+                            drawLetterBlock((charPos(0) + 1, index + 1), c, State.NotExist, 0)
                             index += 1
-                            updateKeyboard(c, State.WrongPlace)
-                            
-                    else 
-                        drawLetterBlock((charPos(0) + 1, index + 1), c, State.NotExist, 0)
-                        index += 1
-                        updateKeyboard(c, State.NotExist)
-                ) 
-                if wordGuess.toVector == wordSeq.toVector then gameWon() else
-                charPos  = (charPos(0) + 1 , 0)
-                guesses -= 1
+                            updateKeyboard(c, State.NotExist)
+                    ) 
+                    if wordGuess.toVector == wordSeq.toVector then gameWon() else
+                    charPos  = (charPos(0) + 1 , 0)
+                    guesses -= 1
+                
+                else println(wordString + " is not a word")
     
     def reset(): Unit = 
         drawGame()    
