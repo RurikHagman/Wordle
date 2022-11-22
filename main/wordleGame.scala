@@ -80,7 +80,7 @@ class wordleGame(word: String):
     def play(): Unit =
         import introprog.PixelWindow
 
-        
+        reset()
 
         while !gameOver do
 
