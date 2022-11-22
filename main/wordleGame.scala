@@ -23,7 +23,7 @@ class wordleGame(word: String):
     def updateKeyboard(key: Char, ecolor: java.awt.Color): Unit =
         if row1.contains(key)      then drawLetterBlock((12, row1.indexOf(key)), key, ecolor, 21)
         else if row2.contains(key) then drawLetterBlock((13, row2.indexOf(key)), key, ecolor, 21)
-        else if row3.contains(key) then drawLetterBlock((14, row3.indexOf(key)), key, ecolor, 21)
+        else if row3.contains(key) then drawLetterBlock((14, row3.indexOf(key) + 1), key, ecolor, 21)
 
     def handleKey(): Unit = 
 
