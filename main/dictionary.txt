@@ -1442,6 +1442,7 @@ fakes
 fakie
 fakir
 falls
+false
 famed
 fancy
 fangs
@@ -1721,6 +1722,7 @@ input
 intro
 issue
 items
+japan
 jeans
 jelly
 jewel
@@ -2164,6 +2166,7 @@ silly
 since
 sites
 sixth
+sixty
 sized
 sizes
 skies
@@ -2184,6 +2187,7 @@ small
 smart
 smell
 smile
+smith
 smoke
 snack
 snake
@@ -2304,6 +2308,7 @@ tenth
 tents
 terms
 tests
+texas
 texts
 thank
 theft
@@ -2427,6 +2432,7 @@ vocal
 vodka
 voice
 volts
+vomit
 voted
 voter
 votes
