@@ -66,7 +66,8 @@ class wordleGame(word: String):
                             else 
                                 drawLetterBlock((charPos(0) + 1, index + 1), c, State.WrongPlace, 0)
                                 index += 1
-                                updateKeyboard(c, State.WrongPlace)
+                                if !wordGuess.map(x => if x == wordSeq(wordGuess.indexOf(x)) then true else false).contains(true) then 
+                                    updateKeyboard(c, State.WrongPlace)
                                 
                         else 
                             drawLetterBlock((charPos(0) + 1, index + 1), c, State.NotExist, 0)
