@@ -1967,6 +1967,7 @@ pizza
 place
 plain
 plane
+plank
 plans
 plant
 plate
@@ -2163,6 +2164,7 @@ sight
 sigma
 signs
 silly
+sings
 since
 sites
 sixth
@@ -2468,6 +2470,7 @@ wider
 widow
 width
 winds
+windy
 wines
 wings
 wiped
