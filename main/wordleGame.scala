@@ -8,6 +8,7 @@ class wordleGame(word: String):
 
 
     val wordSeq = word.toUpperCase().toArray
+    var correctApply = Array(' ', ' ', ' ', ' ', ' ')
 
     val wordMatrix: Vector[Array[Char]] = Vector.fill(6)(Array(' ', ' ', ' ', ' ', ' '))
     
@@ -50,7 +51,7 @@ class wordleGame(word: String):
                 val wordStringBuilder = StringBuilder()
                 wordGuess.foreach(c => wordStringBuilder += c.toLower)
                 val wordString: String = wordStringBuilder.toString
-                
+
                 if Main.dictionary.source.contains(wordString) then 
                     var index = 0
 
@@ -60,14 +61,14 @@ class wordleGame(word: String):
                             if wordSeq(index) == wordGuess(index) then 
                                 
                                 drawLetterBlock((charPos(0) + 1, index + 1) , c, State.RightPlace, 0)
+                                correctApply(index) = c
                                 index += 1 
                                 updateKeyboard(c, State.RightPlace)
                                 
                             else 
                                 drawLetterBlock((charPos(0) + 1, index + 1), c, State.WrongPlace, 0)
                                 index += 1
-                                if !wordGuess.map(x => if x == wordSeq(wordGuess.indexOf(x)) then true else false).contains(true) then 
-                                    updateKeyboard(c, State.WrongPlace)
+                                if !correctApply.contains(c) then updateKeyboard(c, State.WrongPlace)
                                 
                         else 
                             drawLetterBlock((charPos(0) + 1, index + 1), c, State.NotExist, 0)
