@@ -40,8 +40,8 @@ class wordleGame(word: String):
         
         else if key == "Backspace" then                                 //suddar på rätt plats
             if charPos(1) >= 1 then
-                wordMatrix(charPos(0))(charPos(1) - 1) = ' '
                 charPos = (charPos(0), charPos(1) - 1)
+                wordMatrix(charPos(0))(charPos(1)) = ' '
                 drawLetterBlock((charPos(0) + 1 , charPos(1) + 1) , ' ', State.Idle, 0)
         
         else if key == "Enter" then                                    //om kraven för en tillåten gissning uppfylls: ritar ut gissningen och uppdaterar "tangentbordet"

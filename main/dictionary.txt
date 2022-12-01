@@ -1686,6 +1686,7 @@ herbs
 highs
 hills
 hints
+hinge
 hired
 hobby
 holds
@@ -1845,6 +1846,7 @@ midst
 might
 miles
 minds
+miner
 mines
 minor
 minus
@@ -2089,6 +2091,7 @@ rugby
 ruins
 ruled
 ruler
+runes
 rules
 rural
 sadly
@@ -2236,6 +2239,7 @@ stain
 stake
 stamp
 stand
+stare
 stark
 stars
 start

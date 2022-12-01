@@ -35,3 +35,7 @@ def drawKeys(): Unit =              //ritar ut "tangentbordet" när spelet start
     row1.foreach(c => drawLetterBlock((12, row1.indexOf(c)), c, State.Idle, 21))
     row2.foreach(c => drawLetterBlock((13, row2.indexOf(c)), c, State.Idle, 21))
     row3.foreach(c => drawLetterBlock((14, row3.indexOf(c) + 1), c, State.Idle, 21))
+
+def getImage() = 
+    val image = window.getImage
+    introprog.IO.saveJPEG(image, "wordleIMG")
