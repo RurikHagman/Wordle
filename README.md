@@ -11,3 +11,9 @@ How to run:
 cd main
 sbt run
 ```
+
+How to play: 
+- Use your keyboard to enter letters
+- Use `Backspace` to remove retters
+- Press `Enter` to enter word
+- If the word is not recognized it will say so in the terminal
