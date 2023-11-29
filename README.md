@@ -1,7 +1,8 @@
 # Wordle
 <img src="https://github.com/RurikHagman/Wordle/assets/112903317/83863b26-35fd-4bb8-896f-6208bc01f62f" width="200">
 
-***Note: this project was made for fun during my first year of studies***
+
+***Note:  This project was made for fun during my first year of studies which is reflected in the code quality and will not be improved***
 
 How to run:
 - Download sbt 
