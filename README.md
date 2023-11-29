@@ -8,8 +8,8 @@ How to run:
 - Clone the repo to your machine
 - Cd to project directory and do the following commands in terminal:
 ```
-cd main
-sbt run
+> cd main
+> sbt run
 ```
 
 How to play: 
